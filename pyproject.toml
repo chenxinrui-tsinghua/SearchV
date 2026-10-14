@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "searchv"
+version = "1.0.0"
+description = "SearchV: Evolutionary Fine-Grained Visual-Token Skipping for Efficient Vision-Language Models"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+dependencies = [
+    "torch>=2.1.0",
+    "torchvision>=0.16.0",
+    "transformers==4.37.2",
+    "tokenizers==0.15.1",
+    "sentencepiece==0.1.99",
+    "accelerate>=0.21.0",
+    "numpy",
+    "Pillow",
+    "tqdm",
+    "einops==0.6.1",
+    "einops-exts==0.0.4",
+    "timm==0.6.13",
+    "shortuuid",
+    "httpx==0.24.0",
+    "requests",
+]
+
+[project.optional-dependencies]
+wandb = ["wandb"]
+dev = ["build", "twine"]
+
+[tool.setuptools.packages.find]
+include = ["llava*", "src*"]
+exclude = ["assets*", "benchmark*", "docs", "dist*", "playground*", "scripts*", "tests*", "lmms-eval*", "outputs*"]
+
+[tool.wheel]
+exclude = ["assets*", "benchmark*", "docs", "dist*", "playground*", "scripts*", "tests*", "lmms-eval*", "outputs*"]

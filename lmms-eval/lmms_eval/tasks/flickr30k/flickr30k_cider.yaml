@@ -1,0 +1,4 @@
+# flickr30k: evaluate only the flickr_CIDEr group
+group: flickr30k_cider
+task:
+- flickr30k_test_cider

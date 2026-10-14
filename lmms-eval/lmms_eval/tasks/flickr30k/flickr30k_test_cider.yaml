@@ -1,0 +1,23 @@
+# flickr30k_test: CIDEr-only variant (same data as flickr30k_test; CIDEr metric only)
+dataset_path: lmms-lab/flickr30k
+dataset_kwargs:
+  token: True
+task : "flickr30k_test_cider"
+test_split: test
+output_type: generate_until
+doc_to_visual: !function utils.flickr_doc_to_visual
+doc_to_text: !function utils.flickr_doc_to_text
+doc_to_target: "answer"
+generation_kwargs:
+  max_new_tokens: 64
+  temperature: 0
+  top_p: 1.0
+  num_beams: 1
+  do_sample: false
+process_results: !function utils.flickr_process_result
+metric_list:
+  - metric: flickr_CIDEr
+    aggregation : !function utils.flickr_cider
+    higher_is_better : true
+metadata:
+  - version: 0.0

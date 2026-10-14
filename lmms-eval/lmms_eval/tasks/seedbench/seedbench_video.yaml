@@ -1,0 +1,21 @@
+# seedbench: seed_video-only variant
+dataset_path: lmms-lab/SEED-Bench
+dataset_kwargs:
+  token: True
+task: "seedbench_video"
+test_split: test
+output_type: generate_until
+doc_to_visual: !function utils.seed_doc_to_visual
+doc_to_text: !function utils.seed_doc_to_text
+doc_to_target: "answer"
+generation_kwargs:
+  until:
+    - "ASSISTANT:"
+  image_aspect_ratio: original
+process_results: !function utils.seed_process_result
+metric_list:
+  - metric: seed_video
+    aggregation: !function utils.seed_aggregation_result
+    higher_is_better: true
+metadata:
+  - version: 0.0

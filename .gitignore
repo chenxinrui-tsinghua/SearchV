@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+*.egg
+
+# Environments
+.venv/
+venv/
+.env
+
+# Logs / experiment artifacts
+*.log
+*.log.*
+wandb/
+output/
+outputs/
+runs/
+checkpoints/
+ckpts*/
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.pkl
+*.pickle
+
+# Editor / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+.ipynb_checkpoints/
+*.ipynb
+
+# Local data / models
+datasets/
+data/
+models/
+hf_cache/
+.cache/
+
+# Demo leftovers
+serve_images/

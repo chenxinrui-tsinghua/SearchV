@@ -1,0 +1,24 @@
+# seedbench: seed_image-only variant
+dataset_path: lmms-lab/SEED-Bench
+dataset_kwargs:
+  token: True
+task: "seedbench_image"
+test_split: test
+output_type: generate_until
+doc_to_visual: !function utils.seed_doc_to_visual
+doc_to_text: !function utils.seed_doc_to_text
+doc_to_target: "answer"
+generation_kwargs:
+  until:
+    - "ASSISTANT:"
+  # MC answers are short; caps runaway generation with until
+  max_new_tokens: 128
+  temperature: 0
+  image_aspect_ratio: original
+process_results: !function utils.seed_process_result
+metric_list:
+  - metric: seed_image
+    aggregation: !function utils.seed_aggregation_result
+    higher_is_better: true
+metadata:
+  - version: 0.0
