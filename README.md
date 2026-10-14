@@ -38,7 +38,7 @@ It independently decides whether visual tokens participate in **MHA** and **FFN*
 conda create -n searchv python=3.10 -y
 conda activate searchv
 
-cd /path/to/SearchV_release
+cd ./SearchV
 pip install --upgrade pip
 pip install -r requirements.txt
 pip install -e .
@@ -239,6 +239,7 @@ If you find SearchV helpful, please cite:
 ```bibtex
 @inproceedings{searchv2026,
   title     = {SearchV: Evolutionary Fine-Grained Visual-Token Skipping for Efficient Vision-Language Models},
+  author    = {Chen, Xinrui and Huang, Zhen and Li, Shuwei and Zeng, Fanyi and Yue, Dongxu and Yu, Hao and Zhang, Huaisong and Ling, Xitong and Wei, Yongxian and Lu, Feng and Yuan, Chun},
   booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
   year      = {2026}
 }
